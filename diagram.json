@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Victor Feller Dos Santos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 50.4, "left": -2.59, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -24.22,
+      "left": 160.55,
+      "attrs": { "humidity": "50", "temperature": "16" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:3V3", "dht1:VCC", "blue", [ "h72.57", "v-121.76" ] ],
+    [ "esp:D15", "dht1:SDA", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
